@@ -3,7 +3,7 @@ import numpy
 import utlis
 
 
-webcam = False
+webcam = True
 
 path = "data/1.jpeg"
 
@@ -19,7 +19,7 @@ while True:
         img = cv2.imread(path)
         img = cv2.resize(img, (0,0), None, 0.5,0.5)
 
-    utlis.getContours(img, showCannny=True)
+    img, finalContours = utlis.getContours(img, showCannny=True, draw=True)
 
 
     cv2.imshow("Original", img)
